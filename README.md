@@ -60,7 +60,7 @@ Not currently supporting:
 - [`emin` units](https://tomhodgins.github.io/element-queries-spec/element-queries.html#emin)
 - [`emax` units](https://tomhodgins.github.io/element-queries-spec/element-queries.html#emax)
 - [`$this` meta-selector](https://tomhodgins.github.io/element-queries-spec/element-queries.html#selectordef-meta-selectors-this)
-- [`$parent meta-selector](https://tomhodgins.github.io/element-queries-spec/element-queries.html#selectordef-meta-selectors-parent)
+- [`$parent` meta-selector](https://tomhodgins.github.io/element-queries-spec/element-queries.html#selectordef-meta-selectors-parent)
 - [`$prev` meta-selector](https://tomhodgins.github.io/element-queries-spec/element-queries.html#selectordef-meta-selectors-prev)
 - [`$next` meta-selector](https://tomhodgins.github.io/element-queries-spec/element-queries.html#selectordef-meta-selectors-next)
 - [`$it` meta-selector](https://tomhodgins.github.io/element-queries-spec/element-queries.html#selectordef-meta-selectors-it)
