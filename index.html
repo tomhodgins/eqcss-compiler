@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width, initial-scale=1">
+
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic" rel=stylesheet>
+
+<title>EQCSS Compiler</title>
+
+<textarea id=input placeholder="EQCSS Input" data-persist=input>@element 'html' and (min-width: 200px) {
+  body { background: red }
+}
+
+@element 'html' and (min-width: 400px) {
+  body { background: orange }
+}
+
+@element 'html' and (min-width: 600px) {
+  body { background: yellow }
+}
+
+@element 'html' and (min-width: 800px) {
+  body { background: green }
+}
+
+@element 'html' and (min-width: 1000px) {
+  body { background: blue }
+}</textarea>
+<textarea id=output placeholder="JavaScript Output"></textarea>
+
+<script src=eqcss-compiler.js></script>
+
+<script>
+  var input = document.getElementById('input')
+  var output = document.getElementById('output')
+
+  input.addEventListener('keyup',compiler.load)
+  window.addEventListener('load',compiler.load)
+
+  // Persisting Data
+  var field = document.querySelectorAll('[data-persist]')
+  for (i=0;i<field.length;i++){
+    var stored = localStorage.getItem(field[i].getAttribute('data-persist'))
+    if (stored) field[i].value = stored
+    field[i].addEventListener('input',function(){
+      localStorage.setItem(this.getAttribute('data-persist'),this.value)
+    })
+  }
+</script>
+
+<style>
+  * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-kerning: auto;
+  }
+  html {
+    font-size: 10pt;
+    line-height: 1.4;
+    font-weight: 400;
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    margin: 0;
+  }
+  h1 {
+    margin: 0;
+  }
+  textarea {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    font-family: 'source sans', monospace;
+    font-size: 14pt;
+    font-weight: 400;
+  }
+  textarea + textarea {
+    left: 50%;
+  }
+</style>
