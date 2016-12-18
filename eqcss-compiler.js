@@ -143,8 +143,26 @@ $$selector-rules$$\n\
     // Output 1 selector list per query
     selectorList += "    var sel_"+selCount+" = document.querySelectorAll('"+queries[q].selector+"')\n"
 
+
     // Output 1 for() loop with styles for each query
-    selectorRules += "    for (tag in sel_"+selCount+"){\n"
+    selectorRules += "    for (tag=0; tag<sel_"+selCount+".length; tag++){\n\n"
+
+
+    // Mark $this, $parent, $prev, $next
+    selectorRules += "      sel_"+selCount+"[tag].setAttribute('data-eqr-sel_"+selCount+"','this')\n"
+
+    selectorRules += "      if (sel_"+selCount+"[tag].parentNode) {\n\
+        sel_"+selCount+"[tag].parentNode.setAttribute('data-eqr-sel_"+selCount+"','parent')\n\
+      }\n"
+
+    selectorRules += "      if (sel_"+selCount+"[tag].nextElementSibling) {\n\
+        sel_"+selCount+"[tag].nextElementSibling.setAttribute('data-eqr-sel_"+selCount+"','next')\n\
+      }\n"
+
+    selectorRules += "      if (sel_"+selCount+"[tag].previousElementSibling) {\n\
+        sel_"+selCount+"[tag].previousElementSibling.setAttribute('data-eqr-sel_"+selCount+"','prev')\n\
+      }\n"
+
 
     var conditionList = ''
     var elementCount = 0
@@ -187,6 +205,14 @@ $$selector-rules$$\n\
     if (conditionList !== ''){
       selectorRules += "      if ("+conditionList+") {\n"
     }
+
+    queries[q].styles = queries[q].styles.replace(/\$this/g,'[data-eqr-sel_'+selCount+'=\"this"]')
+
+    queries[q].styles = queries[q].styles.replace(/\$parent/g,'[data-eqr-sel_'+selCount+'=\"parent"]')
+
+    queries[q].styles = queries[q].styles.replace(/\$prev/g,'[data-eqr-sel_'+selCount+'=\"prev"]')
+
+    queries[q].styles = queries[q].styles.replace(/\$next/g,'[data-eqr-sel_'+selCount+'=\"next"]')
 
     selectorRules += "      css += '"+queries[q].styles+"'\n\
       }\n"
