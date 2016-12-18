@@ -22,7 +22,7 @@ It could be that a compiler built for EQCSS that was aware of other information,
 
 Eventually the plan for this plugin is to create a command-line tool that can consume EQCSS input, or file(s) and output JavaScript code.
 
-In the meantime while research is just starting the prototype is being built in index.html using JavaScript and two `textarea` elements. You can enter EQCSS code into the left and 
+In the meantime while research is just starting the prototype is being built in index.html using JavaScript and two `textarea` elements. You can enter EQCSS code into the left and every keyup the output on the right will update with the equivalent JavaScript code.
 
 ## Status
 
@@ -60,7 +60,7 @@ Not currently supporting:
 - [`emin` units](https://tomhodgins.github.io/element-queries-spec/element-queries.html#emin)
 - [`emax` units](https://tomhodgins.github.io/element-queries-spec/element-queries.html#emax)
 - [`$this` meta-selector](https://tomhodgins.github.io/element-queries-spec/element-queries.html#selectordef-meta-selectors-this)
-- [`$parent meta-selector](https://tomhodgins.github.io/element-queries-spec/element-queries.html#selectordef-meta-selectors-parent)
+- [`$parent` meta-selector](https://tomhodgins.github.io/element-queries-spec/element-queries.html#selectordef-meta-selectors-parent)
 - [`$prev` meta-selector](https://tomhodgins.github.io/element-queries-spec/element-queries.html#selectordef-meta-selectors-prev)
 - [`$next` meta-selector](https://tomhodgins.github.io/element-queries-spec/element-queries.html#selectordef-meta-selectors-next)
 - [`$it` meta-selector](https://tomhodgins.github.io/element-queries-spec/element-queries.html#selectordef-meta-selectors-it)
