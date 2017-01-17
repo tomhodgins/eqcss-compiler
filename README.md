@@ -2,7 +2,7 @@
 
 # EQCSS Compiler
 
-**A compiler to turn [EQCSS syntax](https://github.com/tomhodgins/element-queries-spec) into equivalent (vanilla) JavaScript**
+**A compiler to turn [CSS Element Queries](https://github.com/tomhodgins/element-queries-spec) using the [EQCSS syntax](https://github.com/eqcss/eqcss) into equivalent (vanilla) JavaScript**
 
 ## What is EQCSS?
 
